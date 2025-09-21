@@ -74,7 +74,10 @@ class activeUser
 
             if ($this->user->sendSMS($data)) {
                 $_SESSION['session_contact'] = true;
-                header("Location: ../views/index.php");
+                echo "<script>
+                            alert('Message sent successfully!');
+                            window.location.href='../views/index.php';
+                      </script>";
                 exit;
             } else {
                 echo "<script>alert('Failed to save contact message.');</script>";
@@ -83,3 +86,4 @@ class activeUser
     }
 }
 #----------------------------------------------------------------------------------------------#
+
